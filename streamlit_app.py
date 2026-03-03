@@ -4,7 +4,7 @@ import base64
 from PIL import Image
 import io
 
-BACKEND_URL = "https://titanic-chatbot-zd0y.onrender.com/"
+BACKEND_URL = "https://titanic-chatbot-zd0y.onrender.com/chat"
 
 st.set_page_config(page_title="Titanic Chat Agent", layout="centered")
 
@@ -22,9 +22,9 @@ if st.button("Ask"):
         data = response.json()
 
         st.subheader("Answer")
-        st.write(data["answer"])
+        st.write(data.get("answer", "No answer returned from backend."))
 
-        if data["plot_image"]:
+        if data.get("plot_image"):
             image_bytes = base64.b64decode(data["plot_image"])
             image = Image.open(io.BytesIO(image_bytes))
             st.subheader("Visualization")
