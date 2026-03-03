@@ -122,7 +122,7 @@ def chat_endpoint(request: ChatRequest):
             "data_summary": data_summary
         })
 
-        answer = result["text"]
+        answer = result["text"] if isinstance(result, dict) else result
         plot_image = generate_plot(request.question)
 
         return ChatResponse(
