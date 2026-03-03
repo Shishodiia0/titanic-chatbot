@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pandas
+matplotlib
+langchain
+langchain-groq
+langchain-experimental
+streamlit
+requests
+pillow
+python-multipart
