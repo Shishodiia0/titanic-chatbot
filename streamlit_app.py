@@ -4,7 +4,7 @@ import base64
 from PIL import Image
 import io
 
-BACKEND_URL = "http://127.0.0.1:8000/chat"
+BACKEND_URL = "https://titanic-chatbot-zd0y.onrender.com/"
 
 st.set_page_config(page_title="Titanic Chat Agent", layout="centered")
 
